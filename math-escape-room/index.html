@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Math Escape Room — учимся решать ДУ</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    };
+  </script>
+  <script
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+
+<div class="layout">
+  <div class="container">
+    <h1>📐 Math Escape Room</h1>
+    <div class="game-status" id="gameStatus" style="display: none;">
+      <span>🏆 Счёт: <span id="scoreDisplay">0</span></span>
+      <span>🚪 Комната: <span id="roomDisplay">1</span>/6</span>
+    </div>
+
+    <!-- Блок авторизации / профиля -->
+    <div id="authBox" class="panel auth-panel">
+      <h3>🔐 Вход в игру</h3>
+      <input id="email" type="email" placeholder="Email" autocomplete="email">
+      <input id="password" type="password" placeholder="Пароль (минимум 6 символов)">
+      <div class="button-group">
+        <button id="registerBtn" class="btn primary">📝 Регистрация</button>
+        <button id="loginBtn" class="btn secondary">🔑 Войти</button>
+      </div>
+    </div>
+
+    <div id="userPanel" style="display: none;" class="panel user-panel">
+      <span id="userEmail"></span>
+      <button id="logoutBtn" class="btn small danger">🚪 Выйти</button>
+    </div>
+
+    <button id="startBtn" class="btn large play-btn">▶ Начать игру</button>
+    <div id="game"></div>
+  </div>
+
+  <div class="sidebar">
+    <h3>🏅 Таблица лидеров</h3>
+    <div id="profiles" class="leaderboard"></div>
+  </div>
+</div>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>
